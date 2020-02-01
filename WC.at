@@ -1,0 +1,16 @@
+
+
+model<-lm(sanday-daily.data = NewspaperData)
+
+model<- lm(at~waist,data=WC_AT)
+
+labary("lattice")
+attach(WC_AT)
+dotplot(AT,main=Dot plot of AT" Circulations",col="dodgerblue4")
+dotplot(Waist,main="Dot Plotof Waist Circulations",col="dodgerblue4")
+boxplot(AT,col="dodgerblue4")
+boxplot(Waist,col="dodgerblue4")
+
+reg.model<-lm(AT~Waist,data=WC_AT)
+summary(reg.model)
+predict(reg.model,data.frame(waist=c(50,110)))
